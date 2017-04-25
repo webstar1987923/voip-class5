@@ -7,7 +7,7 @@
         <!-- logo for regular state and mobile devices -->
         <div class="logo-lg">
           <img src="/static/img/copilot-logo-white.svg" alt="Logo" class="img-responsive">
-          <span>CoPilot</span>
+          <span>Class 5</span>
         </div>
       </a>
 
@@ -151,9 +151,8 @@
     <!-- /.content-wrapper -->
 
     <!-- Main Footer -->
-    <footer class="main-footer">
-      <strong>Copyright &copy; {{year}} <a href="javascript:;">CoPilot</a>.</strong> All rights reserved.
-    </footer>
+    <!-- footer class="main-footer">      
+    </footer -->
   </div>
   <!-- ./wrapper -->
 </template>

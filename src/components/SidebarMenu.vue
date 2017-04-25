@@ -6,6 +6,31 @@
         <span class="page">Dashboard</span>
       </router-link>
     </li>
+    <li class="active pageLink" v-on:click="toggleMenu">
+      <router-link to="/report"><i class="fa fa-desktop"></i>
+        <span class="page">Report</span>
+      </router-link>
+    </li>
+    <li class="active pageLink" v-on:click="toggleMenu">
+      <router-link to="/cdr"><i class="fa fa-desktop"></i>
+        <span class="page">CDR</span>
+      </router-link>
+    </li>
+    <li class="active pageLink" v-on:click="toggleMenu">
+      <router-link to="/subscribers"><i class="fa fa-desktop"></i>
+        <span class="page">Subscribers</span>
+      </router-link>
+    </li>
+    <li class="active pageLink" v-on:click="toggleMenu">
+      <router-link to="/subscriber_payment"><i class="fa fa-desktop"></i>
+        <span class="page">Subscriber Payment</span>
+      </router-link>
+    </li>
+    <li class="active pageLink" v-on:click="toggleMenu">
+      <router-link to="/payment_history"><i class="fa fa-desktop"></i>
+        <span class="page">Payment History</span>
+      </router-link>
+    </li>
     <li class="pageLink" v-on:click="toggleMenu">
       <router-link to="/tables"><i class="fa fa-table"></i>
         <span class="page">Tables</span>

@@ -2,16 +2,10 @@
   <!-- Main content -->
   <section class="content">
     <!-- Info boxes -->
-    <div class="row">
-      <div class="alert alert-success alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <h4><i class="icon fa fa-check"></i> CoPilot is open source!</h4>
-        Click on icon to check out it out on github. <a href="https://github.com/misterGF/CoPilot" target="_blank"><i class="fa fa-github fa-2x"></i></a>
-      </div>
+    <div class="row">      
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
           <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
-
           <div class="info-box-content">
             <span class="info-box-text">CPU Traffic</span>
             <span class="info-box-number">90<small>%</small></span>
@@ -95,75 +89,61 @@
     <!-- Main row -->
     <div class="row">
       <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box bg-yellow">
-          <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
+        
+      </div>      
+    </div>
 
-          <div class="info-box-content">
-            <span class="info-box-text">Inventory</span>
-            <span class="info-box-number">5,200</span>
+    <div class="row center-block">
+      <h2>Last 20 Payment</h2>
+      <div class="col-md-12">
+        <div class="box">          
+          <!-- /.box-header -->
+          <div class="box-body">
+            <div class="dataTables_wrapper form-inline dt-bootstrap" id="example1_wrapper">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div id="example1_length" class="dataTables_length">
 
-            <div class="progress">
-              <div class="progress-bar" style="width: 50%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-12 table-responsive">
+                  <table aria-describedby="example1_info" role="grid" id="example1" class="table table-bordered table-striped dataTable">
+                    <thead>
+                      <tr role="row">
+                        <th aria-sort="ascending" style="width: 167px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting_asc">Name</th>
+                        <th style="width: 207px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Amount</th>
+                        <th style="width: 182px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Paid on</th>
+                        <th style="width: 142px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Method</th>
+                        <th style="width: 101px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Transaction ID</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="(payment, index) in payments"  :class="{'even': $index % 2 === 0, 'odd': $index % 2 !== 0 }" role="row">
+                        <td class="sorting_1">{{payment.name}}</td>
+                        <td>{{payment.amount}}</td>
+                        <td>{{payment.paid_on}}</td>
+                        <td>{{payment.method}}</td>
+                        <td>{{payment.transaction_id}}</td>
+                      </tr>                      
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <th colspan="1" rowspan="1">Name</th>
+                        <th colspan="1" rowspan="1">Amount</th>
+                        <th colspan="1" rowspan="1">Paid on</th>
+                        <th colspan="1" rowspan="1">Method</th>
+                        <th colspan="1" rowspan="1">Transaction ID</th>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
             </div>
-                <span class="progress-description">
-                  50% Increase
-                </span>
+            <!-- /.box-body -->
           </div>
-          <!-- /.info-box-content -->
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box bg-green">
-          <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">Mentions</span>
-            <span class="info-box-number">92,050</span>
-
-            <div class="progress">
-              <div class="progress-bar" style="width: 20%"></div>
-            </div>
-                <span class="progress-description">
-                  20% Increase
-                </span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box bg-red">
-          <span class="info-box-icon"><i class="ion ion-ios-cloud-download-outline"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">Downloads</span>
-            <span class="info-box-number">114,381</span>
-
-            <div class="progress">
-              <div class="progress-bar" style="width: 70%"></div>
-            </div>
-                <span class="progress-description">
-                  70% Increase
-                </span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box bg-aqua">
-          <span class="info-box-icon"><i class="ion-ios-chatbubble-outline"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">Direct Messages</span>
-            <span class="info-box-number">163,921</span>
-
-            <div class="progress">
-              <div class="progress-bar" style="width: 40%"></div>
-            </div>
-                <span class="progress-description">
-                  40% Increase
-                </span>
-          </div>
-          <!-- /.info-box-content -->
         </div>
       </div>
     </div>
@@ -173,7 +153,9 @@
 </template>
 
 <script>
+import {payments} from '../../demo'
 import Chart from 'chart.js'
+import $ from 'jquery'
 
 export default {
   data () {
@@ -184,7 +166,8 @@ export default {
           a.push(Math.floor(Math.random() * (max - min + 1)) + max)
         }
         return a
-      }
+      },
+      payments
     }
   },
   computed: {
@@ -260,6 +243,8 @@ export default {
       }
 
       new Chart(pieChartCanvas, pieConfig) // eslint-disable-line no-new
+
+      $('#example1').DataTable()
     })
   }
 }
